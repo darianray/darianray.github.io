@@ -1,25 +1,42 @@
-import React, { Component } from "react";
-//import CatTest from "../../Images/cloudTest.png"
-import "./style.scss";
-import HeaderImage from "../../PortfolioImages/HeaderImage.png"
-import Sketch from "react-p5";
-import bigLogo from "../../PortfolioImages/bigLogo.png"
-import p5 from "p5";
+import './style.scss';
 
-// function preload() {
-//   img = loadImage("P5Images/catTest.jpg");
-// }
-// x = 50;
-// y = 50;
+import p5 from 'p5';
+import React, { Component } from 'react';
+import Sketch from 'react-p5';
+
+import bigLogo from '../../PortfolioImages/bigLogo.png';
+import HeaderImage from '../../PortfolioImages/HeaderImage.png';
+
+
+
 export default function DrawHeader() {
-  let imi;
+
+  //create cloud array to hold multiple clouds
+  let cloud = [];
+  let blueCloud;
+  let yellowCloud;
+  let peachCloud;
   let backgroundImage;
   let logo;
   let x = 50;
+  let extraX = 10;
+  let negativeX = -50;
   let y = 50;
-  //p5.loadImage("P5Images/catTest.jpg")
+ 
+  var spot = {
+    x: 100,
+    y: 50,
+  }
+
   function preload(p5) {
-    imi = p5.loadImage("P5Images/cloudTest.png");
+    blueCloud = p5.loadImage("P5Images/cloudTest.png")
+    yellowCloud = p5.loadImage("P5Images/yellowCloud.png")
+    peachCloud = p5.loadImage("P5Images/peachCloud.png")
+
+    //load images into cloud array
+    for(let i = 0; i < 5; i++){
+      cloud[i] = p5.loadImage("P5Images/cloudTest.png");
+    }
     backgroundImage = p5.loadImage(HeaderImage)
     logo = p5.loadImage(bigLogo)
   }
@@ -32,21 +49,30 @@ export default function DrawHeader() {
 
   function draw(p5){
    // p5.background(backgroundImage)
-   p5.clear();
-    p5.image(logo, 500, 175)
-  //   console.log("This is the draw function")
-  //  new p5.Image("P5Images/catTest.jpg", 25, 25);
-  // // console.log("This :P: ", img.innerHeight)
+  p5.clear();
 
-  p5.image(imi, x, y, 200, 200);
+  //draw clouds from cloud array
+  p5.image(peachCloud, negativeX+1500, y+250, 400, 300);
+  for(let i = 0; i < 5; i++){
+    //random x value
+    spot.x = Math.random(0, p5.innerWidth)
+    //random y value
+    spot.y = Math.random(0, p5.innerHeight)
+   let r = Math.random(20, 60) * 100
+    p5.image(cloud[i], (spot.x * 100)+x, y+spot.y, 400, 300);
+    console.log("x ",spot.x)
+    //ourX++
+  }
+  p5.image(logo, 500, 175)
+  //p5.image(blueCloud, x+75, y, 400, 300);
+
+  p5.image(yellowCloud, negativeX+1500, y + 600, 500, 300);
+  p5.image(peachCloud, extraX-200, y+450, 400, 300);
   x++
+  spot.x++
+  negativeX-=2
+  extraX+=3
    }
-  // draw() {
-  //  // const p5 = this.p5;
-
-  //  p5.image(img, 0, 0)
-
-  // }
-
+ 
   return <Sketch preload={preload} setup={setup} draw={draw}/>;
 }

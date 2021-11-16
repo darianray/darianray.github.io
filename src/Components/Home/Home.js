@@ -1,13 +1,14 @@
-import React, {Component} from "react";
-import Header from "../Header/Header";
-//import Logo from "../../Images/logoGif.gif";
-import Sketch, {loadImage, image} from "react-p5";
-import DrawHeader, {setup, draw} from "../DrawHeader/DrawHeader"
-import bigLogo from "../../PortfolioImages/bigLogo.png"
-//import cloudTest from "../../../public/Images/";
-import "./style.scss";
-import p5 from "p5";
+import './style.scss';
 
+import p5 from 'p5';
+import React, { Component } from 'react';
+import Sketch, { loadImage } from 'react-p5';
+
+import DrawHeader, { draw, setup } from '../DrawHeader/DrawHeader';
+import Header from '../Header/Header';
+
+//import Logo from "../../Images/logoGif.gif";
+//import cloudTest from "../../../public/Images/";
 
 let  cloud;
 
@@ -18,6 +19,7 @@ function preload(){
 class Home extends Component{
     x = 50
     y = 50
+    
    
 
    
