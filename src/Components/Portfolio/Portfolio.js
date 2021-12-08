@@ -1,10 +1,12 @@
-import React from "react";
-import "./style.scss";
+import './style.scss';
+
+import React from 'react';
 
 function Portfolio() {
   return (
+    <>
     <div className="portfolio">
-      
+      <div className="div-container">
       <strong>Hi, this is portfolio </strong>
       <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
       semper iaculis neque eget rhoncus. Mauris lacus ipsum, tempor auctor est
@@ -45,26 +47,7 @@ function Portfolio() {
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      </div>
+      </div></div></>
   
   );
 }

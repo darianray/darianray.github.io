@@ -1,9 +1,11 @@
-import React from "react";
+import React from 'react';
 
 function Contact() {
   return (
+    <>
     <div className="contact">
       {" "}
+      <div className="div-container">
       <strong>Hi, this is Contact </strong>
       <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
       semper iaculis neque eget rhoncus. Mauris lacus ipsum, tempor auctor est
@@ -42,28 +44,7 @@ function Contact() {
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-    </div>
+    </div></div></>
   );
 }
 

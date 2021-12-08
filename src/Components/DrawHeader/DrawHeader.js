@@ -12,67 +12,103 @@ import HeaderImage from '../../PortfolioImages/HeaderImage.png';
 export default function DrawHeader() {
 
   //create cloud array to hold multiple clouds
-  let cloud = [];
-  let blueCloud;
-  let yellowCloud;
-  let peachCloud;
+  let clouds = [];
+  let cloud;
   let backgroundImage;
   let logo;
   let x = 50;
-  let extraX = 10;
-  let negativeX = -50;
   let y = 50;
- 
-  var spot = {
-    x: 100,
-    y: 50,
-  }
 
+  //holds position of clouds
+  var cloudPosition = [];
+
+  
+  p5.disableFriendlyErrors = true; // disables FES
+  
   function preload(p5) {
-    blueCloud = p5.loadImage("P5Images/cloudTest.png")
-    yellowCloud = p5.loadImage("P5Images/yellowCloud.png")
-    peachCloud = p5.loadImage("P5Images/peachCloud.png")
 
     //load images into cloud array
     for(let i = 0; i < 5; i++){
-      cloud[i] = p5.loadImage("P5Images/cloudTest.png");
+      clouds[i] = p5.loadImage("P5Images/cloudTest.png");
     }
+    cloud = p5.loadImage("P5Images/cloudTest.png");
     backgroundImage = p5.loadImage(HeaderImage)
     logo = p5.loadImage(bigLogo)
   }
 
   function setup(p5, parent) {
     p5.createCanvas(window.innerWidth, window.innerHeight).parent(parent);
-   // p5.image(imi, 2, 2);
-   //p5.noLoop();
+  
+    //call cloud spawn
+    cloud_spawn(p5)
+
+    
+ // p5.noLoop();
+ 
   }
 
   function draw(p5){
-   // p5.background(backgroundImage)
-  p5.clear();
-
-  //draw clouds from cloud array
-  p5.image(peachCloud, negativeX+1500, y+250, 400, 300);
-  for(let i = 0; i < 5; i++){
-    //random x value
-    spot.x = Math.random(0, p5.innerWidth)
-    //random y value
-    spot.y = Math.random(0, p5.innerHeight)
-   let r = Math.random(20, 60) * 100
-    p5.image(cloud[i], (spot.x * 100)+x, y+spot.y, 400, 300);
-    console.log("x ",spot.x)
-    //ourX++
-  }
+    // for (let i = 0; i < clouds.length; i++) {
+    //   clouds[i].position.x += clouds[i].width * 0.01;
+    //   if (clouds[i].position.x > p5.innerWidth) {
+    //     clouds[i].position.x = 0;
+      
+    //   }
+    // }
+    p5.clear();
   p5.image(logo, 500, 175)
-  //p5.image(blueCloud, x+75, y, 400, 300);
-
-  p5.image(yellowCloud, negativeX+1500, y + 600, 500, 300);
-  p5.image(peachCloud, extraX-200, y+450, 400, 300);
-  x++
-  spot.x++
-  negativeX-=2
-  extraX+=3
-   }
+  
+ // p5.image(cloud, x+75, y+300, 400, 300);
  
+  cloud_spawn(p5)
+  cloudMove();
+// p5.noLoop();
+
+
+   }
+
+  function cloud_spawn(p5){
+    // for (let i = 0; i < 10; i++) {
+    //   let c = createSprite(
+    //     random(width), random(height),
+    //     random(25, 100), random(25, 100));
+    //   c.shapeColor = color(random(200, 255));
+    //   clouds.add(c);
+    // }
+   for(var i=0; i<3; i++){
+            var positionx = 10;
+            var positiony = Math.random(100, 300)*1000;
+            var randomSpeed = Math.random(2, 4)*10;
+
+            //pushes two values into CloudPosition. X and Y
+            cloudPosition.push([positionx + i, positiony + i, randomSpeed]);
+            //set x and y to  this. i is the cloud itself, 0 is the x and 1 is the y
+
+            p5.image(cloud,cloudPosition[i][0], cloudPosition[i][1], 400, 300);
+           
+            
+        }
+     //   p5.image(cloud, x+175, y+500, 400, 300);
+    console.log("Cloud spawn is working")
+//
+}
+
+////x is UPDATING
+//So cloud image is not properly bound to the x...???
+
+function cloudMove(){
+  for(var i = 0; i < cloudPosition.length; i++)
+  {
+    console.log("Cloud: ", i, "X: ", cloudPosition[i][0], "Y: ", cloudPosition[i][1])
+    //set x and y to  this. i is the cloud itself, 0 is the x and 1 is the y
+    
+     cloudPosition[i][0] += cloudPosition[i][2]; //Move the cloud to the right
+    
+   
+  }
+  x++
+  console.log("Move")
+}
+
   return <Sketch preload={preload} setup={setup} draw={draw}/>;
 }

@@ -1,10 +1,12 @@
-import React from "react";
-import "./style.scss";
+import './style.scss';
+
+import React from 'react';
 
 export default function About() {
   return (
+    <>
     <div className="about">
-      
+       <div className="div-container">
       <strong>Hi, this is the about section!</strong><br></br>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper
       iaculis neque eget rhoncus. Mauris lacus ipsum, tempor auctor est ut,
@@ -41,28 +43,7 @@ export default function About() {
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      </div>
+      </div></div></>
   
   );
 }

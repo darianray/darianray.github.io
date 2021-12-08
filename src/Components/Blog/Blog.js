@@ -1,9 +1,10 @@
-import React from "react";
+import React from 'react';
 
 function Blog() {
   return (
+    <>
     <div id="body" className="blog">
-      
+      <div className="div-container">
       <strong> Hi, this is Blog </strong>
       <br></br>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper
@@ -45,26 +46,7 @@ function Blog() {
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      </div>
+      </div></div></>
 
   );
 }

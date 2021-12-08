@@ -1,46 +1,15 @@
 import './style.scss';
 
-import p5 from 'p5';
 import React, { Component } from 'react';
-import Sketch, { loadImage } from 'react-p5';
 
-import DrawHeader, { draw, setup } from '../DrawHeader/DrawHeader';
+import ControlledLottie from '../DrawHeader/ControlledLottie';
 import Header from '../Header/Header';
 
-//import Logo from "../../Images/logoGif.gif";
-//import cloudTest from "../../../public/Images/";
-
-let  cloud;
-
-function preload(){
-  cloud = loadImage("P5Images/catTest.jpg");
-  }
 
 class Home extends Component{
-    x = 50
-    y = 50
-    
-   
-
-   
-
-    setup = (p5, parent) => {
-      p5.createCanvas(window.innerWidth, window.innerHeight).parent(parent)
-     /// image("Images/cloudTest.png", 0, 0);
-      //console.log("Height: ", window.innerHeight, "Width: ", window.outerWidth)
-    }
-    draw = p5 => {
-      p5.image(cloud, this.x, this.y + 75)
-      console.log("HI, this  cloud")
-      p5.ellipse(this.x, this.y + 75, 100, 100)
-      this.x++
   
-   
-    }
 
-    // show(){
-    
-    // }
+   
 
     render(){
   return (
@@ -50,51 +19,9 @@ class Home extends Component{
       {/* <DrawHeader />*/}
       <div className="hero-container">
         <Header />
-        {/*<img src="P5Images/catTest.jpg" alt=""/>  */}
-      <div className="animation-div" id="animation-div"> <DrawHeader className = "draw-header"/></div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>  <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      <div className="animation-div" id="animation-div"><ControlledLottie /> </div>
+      <div className="div-container">
+      <br></br>  
       <br></br>
       <br></br>
       <br></br>
@@ -142,32 +69,7 @@ class Home extends Component{
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br></div></body>
+      <br></br></div></div></body>
     </>
   );
     }
