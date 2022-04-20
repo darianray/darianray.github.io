@@ -13,3 +13,81 @@
     width: 20rem;
     height: 20rem;
 }
+
+//divs
+.left-home-div{
+    margin-top: 8rem;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  //align-items: flex-start;
+  justify-content: flex-start;
+  width: 47%;
+  height: 1200px;
+  }
+  
+  .right-home-div{
+    margin-top: 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-end;
+  //align-items: flex-end;
+  width: 47%;
+  height: 1200px;
+  
+  }
+  
+  .home-paper{
+    width: 100%;
+    //background-color: blue;
+  }
+
+.senior-photo-img{
+    width: 47%;
+    height: 20%;
+}
+
+.paragraph-div{
+    padding: 3rem;
+    font-size: 16pt;
+}
+
+.resume-btn{
+    width: 25%;
+    height: 5%;
+    background-color: #ffd9fdf2;
+    font-weight: bold;
+    font-size: 12pt;
+    border-radius: .5rem;
+    border-color: transparent;
+}
+
+.resume-btn:hover{
+    background-color: #f0b9eef2;
+}
+
+.resume-edu-card{
+    margin-bottom: 2rem;
+    height: 30%;
+}
+
+.resume-skills-card{
+    height: 67.25%
+}
+
+.unordered-list{
+    margin-left: 3rem;
+    padding-left: 0pt;
+    text-align: left;
+    padding-bottom: 10pt;
+}
+
+.unordered-list-bullets{
+    list-style-type: none; /* Remove bullets */
+    font-size: 12pt;
+    margin-left: 0pt !important;
+    padding: 0pt;
+    text-align: center;
+}
+

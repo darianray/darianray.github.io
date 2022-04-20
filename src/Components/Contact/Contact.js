@@ -1,50 +1,101 @@
+import './style.scss';
+
+import { Button, TextField } from '@mui/material';
 import React from 'react';
 
 function Contact() {
+  // height of the TextField
+const height = 150
+
+// magic number which must be set appropriately for height
+const labelOffset = -6
   return (
     <>
     <div className="contact">
+    <div className="div-container-contact">
+    <section className="contact-section">
       {" "}
       <div className="div-container">
-      <strong>Hi, this is Contact </strong>
-      <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-      semper iaculis neque eget rhoncus. Mauris lacus ipsum, tempor auctor est
-      ut, sollicitudin eleifend est. Nulla tempus ex nulla, non porta nunc
-      varius a. Proin pretium enim eget enim feugiat, sed mollis lacus
-      dignissim. Aenean bibendum rutrum nisi sed auctor. Mauris fermentum, quam
-      vel feugiat mollis, odio justo pellentesque tellus, fringilla consectetur
-      enim nisi eget ipsum. Sed non elit ac ex pulvinar scelerisque. Vestibulum
-      at gravida nisl, vel consequat nisi. Nam ut rutrum mauris. Donec sed nunc
-      in augue facilisis aliquam id et dolor. Nullam at mauris tincidunt,
-      eleifend magna quis, facilisis velit. Sed vulputate est non felis pharetra
-      tincidunt. Maecenas dapibus justo at lectus tincidunt, et condimentum
-      velit pharetra. Donec ante nisi, accumsan a magna sed, rutrum auctor nunc.
-      Pellentesque tincidunt ex nec hendrerit ornare. Maecenas pharetra nisi
-      feugiat efficitur sagittis. Suspendisse potenti. Ut eget laoreet elit.
-      Suspendisse eleifend malesuada aliquam. In commodo nibh eget interdum
-      iaculis. Sed eget ipsum et felis ultrices lacinia a nec ex. Sed elementum
-      lorem ut tempus varius. Sed mauris est, fermentum et nisl non, suscipit
-      pretium lorem. Cras tempor dui a lacus scelerisque lacinia. Integer et
-      nibh nisl. Integer eu erat tincidunt, vehicula dolor sed, suscipit arcu.
-      Donec venenatis ex id ipsum porta, quis pulvinar mauris placerat. Lorem
-      ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor interdum
-      ex, eget luctus nisl congue id. Orci varius natoque penatibus et magnis
-      dis parturient montes, nascetur ridiculus mus. Sed ex erat, elementum
-      cursus venenatis ac, porta sit amet lectus.<br></br>
-      <br></br>
-      <br></br> 
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-    </div></div></>
+      <form className="contact-form" onSubmit={(e) => this.formSubmit(e)}>
+<h1>Contact Me </h1>
+<div className="name-email-div">
+        <TextField
+        className="name-textfield"
+          id="outlined-basic"
+          placeholder="Enter your name"
+          label="Name"
+          variant="outlined"
+         // value={this.state.name}
+          //onChange={(e) => this.setState({ name: e.target.value })}
+          required
+          type="text"
+        />
+
+        <TextField
+        className="email-textfield"
+          id="outlined-basic"
+          label="Email"
+          placeholder="Enter email address"
+          variant="outlined"
+          //value={this.state.email}
+         // onChange={(e) => this.handleChangeEmail(e)}
+        //  error={this.state.emailError}
+          required
+          type="email"
+        />
+        </div>
+        <br/>
+        <div className="subject-message-div">
+        <TextField
+        className="subject-textfield"
+          id="outlined-basic"
+          placeholder="Enter Subject"
+          label="Subject"
+          variant="outlined"
+        //  value={this.state.subject}
+         // onChange={(e) => this.setState({ subject: e.target.value })}
+          required
+        />
+        <br/>
+        <TextField
+        className="message-textfield"
+          id="outlined-basic"
+          placeholder="Enter message"
+          label="Message"
+          variant="outlined"
+          /* styles the wrapper */
+  style={{ height }}
+
+  /* styles the label component */
+  InputLabelProps={{
+    style: {
+      height,
+      ...( { top: `${labelOffset}px` }),
+    },
+  }}
+
+  /* styles the input component */
+  inputProps={{
+      style: {
+        height,
+        padding: '0 14px',
+      },
+  }}
+        //  value={this.state.subject}
+         // onChange={(e) => this.setState({ subject: e.target.value })}
+          required
+        />
+        <br />
+        <br />
+        </div>
+        <div className="button--container">
+          <Button size="large" type="submit" className="submit-button" >
+            {/*this.state.buttonText*/}
+            Send Email
+          </Button>
+        </div>
+      </form>
+    </div></section></div></div></>
   );
 }
 
