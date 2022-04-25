@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/index.html/static/css/main.ed9cfbd7.css",
+    "main.js": "/index.html/static/js/main.ee6b38fc.js",
+    "static/media/resumePhoto.jpg": "/index.html/static/media/resumePhoto.32985ee20a3366ad4e94.jpg",
+    "static/media/park.jpg": "/index.html/static/media/park.73fd8807bec068ee03aa.jpg",
+    "static/media/gradientSky.png": "/index.html/static/media/gradientSky.1def5f3a4720a20ad775.png",
+    "static/media/translate.jpg": "/index.html/static/media/translate.adf1cd2175e2d6fcbf0d.jpg",
+    "static/media/okami.PNG": "/index.html/static/media/okami.d7257c8459759a4bfced.PNG",
+    "static/media/buyCar.jpg": "/index.html/static/media/buyCar.9e300430aad622fa9924.jpg",
+    "index.html": "/index.html/index.html",
+    "main.ed9cfbd7.css.map": "/index.html/static/css/main.ed9cfbd7.css.map",
+    "main.ee6b38fc.js.map": "/index.html/static/js/main.ee6b38fc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ed9cfbd7.css",
+    "static/js/main.ee6b38fc.js"
+  ]
+}
