@@ -15,7 +15,7 @@ export default function About() {
       <div className="about">
         <div className="div-container">
           <div className="home-div-container">
-            <container className="left-home-div">
+            <div className="left-home-div">
               {/*<img className="senior-photo-img" src={seniorPhoto} alt="front of fountain"/> */}
               <Paper className="home-paper" elevation={0}>
                 <Card>
@@ -56,14 +56,14 @@ export default function About() {
                   Download CSV
                 </button>
               </Paper>
-            </container>
-            <container className="right-home-div">
+            </div>
+            <div className="right-home-div">
               <Card className="resume-edu-card">
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
                     <strong> Education </strong>
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <div>
                     <strong>
                       {" "}
                       B.S. Software Development/ Digital Design Minor{" "}
@@ -97,12 +97,12 @@ export default function About() {
                         4.0 GPA, President’s List every semester
                       </li>
                     </ul>
-                  </Typography>
+                  </div>
                 </CardContent>
               </Card>
               <Card className="resume-skills-card">
                 <CardContent>
-                  <Typography variant="body2" color="text.secondary">
+                  <div>
                     <Typography gutterBottom variant="h5" component="div">
                       <strong>LANGUAGES </strong>
                     </Typography>
@@ -152,10 +152,10 @@ export default function About() {
                       <li> Numerical Simulation</li>
                       <li>Regression Analysis</li>
                     </ul>
-                  </Typography>
+                  </div>
                 </CardContent>
               </Card>
-            </container>
+            </div>
           </div>
         </div>
       </div>

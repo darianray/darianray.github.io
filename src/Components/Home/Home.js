@@ -9,7 +9,7 @@ class Home extends Component {
   render() {
     return (
       <>
-        <body className="fix-overflow">
+        <div className="fix-overflow">
           <div className="home">
             {/* <DrawHeader />*/}
             <div className="hero-container">
@@ -20,7 +20,7 @@ class Home extends Component {
              
             </div>
           </div>
-        </body>
+        </div>
       </>
     );
   }
