@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://darianray/darianray.github.io/index.html",
+  "homepage": "https://darianray/darianray.github.io",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.0",
